@@ -137,3 +137,30 @@ The project follows a tool-based AI agent architecture:
                            │
                            ▼
                          USER
+
+User Request
+     │
+     ▼
+Gemini API
+     │
+     │  API unavailable / quota exceeded
+     ▼
+Fallback Agent
+     │
+     ▼
+Rule-Based Intent Detection
+     │
+     ├──────────────┬──────────────┬──────────────┐
+     ▼              ▼              ▼              ▼
+  Weather         Time         Currency       Calculator
+     │              │              │              │
+     ▼              ▼              ▼              ▼
+  Weather API    Time API    Currency API     Local Logic
+     │              │              │              │
+     └──────────────┴──────────────┴──────────────┘
+                            │
+                            ▼
+                          Result
+                            │
+                            ▼
+                           User                        
